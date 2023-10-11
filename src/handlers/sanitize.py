@@ -1,6 +1,5 @@
 import json
 import re
-import typing
 import azure.functions as func
 
 
@@ -25,6 +24,6 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
         mimetype='application/json'
     )
 
-def sanitize(data: str, replacement_email: str):
+def sanitize(data: str, replacement_email: str) -> str:
     email_regex = re.compile("([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\[[\t -Z^-~]*])")
     return re.sub(email_regex, replacement_email, data)
