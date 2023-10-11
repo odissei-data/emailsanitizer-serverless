@@ -12,6 +12,10 @@ Once you've installed the framework, start hacking.
 
 Develop as usual. Update requirements.txt (ideally with exact version pinning) as you go along. Test locally with `sls offline`
 
+## Tests
+
+Now has tests included using Unittest framework. Run them locally with `python -m unittest` in the root directory.
+
 ## Deployment
 
 Once happy with your work, inspect the `serverless.yml` file to determine deployment options. This one, obviously, is aimed at Azure (there are different templates for different clouds, but the structure is interchangeable). If satisfied, login to Azure via cli (need the `azcli` package for this), then do `sls deploy` to deploy.
